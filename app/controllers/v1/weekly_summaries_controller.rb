@@ -7,7 +7,7 @@ module V1
     end
 
     def time_played
-      @playthroughs = Playthrough.all.order(time_spent: :desc).limit(10)
+      @playthroughs = Playthrough.all.order(finished_playing: :desc).limit(10)
       render json: @playthroughs, each_serializer: V1::WeeklySummarySerializer
     end
   end

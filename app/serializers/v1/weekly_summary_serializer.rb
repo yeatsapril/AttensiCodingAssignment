@@ -5,5 +5,9 @@ module V1
     def player
       object.player.name
     end
+
+    def time_spent
+      Time.at(object.finished_playing - object.started_playing).utc.strftime("%H:%M:%S")
+    end
   end
 end
