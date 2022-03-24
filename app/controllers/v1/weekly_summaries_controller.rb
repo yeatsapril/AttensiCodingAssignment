@@ -1,10 +1,14 @@
 module V1
   class WeeklySummariesController < ApplicationController
 
-    def index
+    def score
+      @playthroughs = Playthrough.all.order(score: :desc).limit(10)
+      render json: @playthroughs, each_serializer: V1::WeeklySummarySerializer
     end
 
-    def show
+    def time_played
+      @playthroughs = Playthrough.all.order(time_spent: :desc).limit(10)
+      render json: @playthroughs, each_serializer: V1::WeeklySummarySerializer
     end
   end
 end
