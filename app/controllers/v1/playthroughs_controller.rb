@@ -13,6 +13,8 @@ module V1
 
 
     def create
+      @playthrough = Playthrough.new(playthrough_params)
+
       if @playthrough.save
         render json: @playthrough
       else
@@ -41,7 +43,7 @@ module V1
     private
 
     def playthrough_params
-      params.permit(:started_playing, :time_spent, :score, :player)
+      params.permit(:started_playing, :time_spent, :score, :player_id)
     end
 
     def set_playthrough
