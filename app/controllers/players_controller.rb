@@ -1,40 +1,40 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: i%[show, update, destroy]
+  before_action :set_player, only: [:show, :update, :destroy]
 
   def index
     @players = Player.all
-    render :json @players
+    render json: @players
   end
 
   def show
-    render :json @player
+    render json: @player
   end
 
   def create
     @player = Player.new(player_params)
 
     if @player.save
-      render :json @player
+      render json: @player
     else
-      render :json { error: 'player creation failed' }, status: 400
+      render json: { error: 'player creation failed' }, status: 400
     end
   end
 
   def update
     if @player
       @player.update(player_params)
-      render :json @player, status: 200
+      render json: @player, status: 200
     else
-      render :json { error: 'player update failed' }, status: 400
+      render json: { error: 'player update failed' }, status: 400
     end
   end
 
   def destroy
     if @player
       @player.destroy
-      render :json @player, status: 200
+      render json: @player, status: 200
     else
-      render :json { error: 'player deletion failed' }, status: 400
+      render json: { error: 'player deletion failed' }, status: 400
     end
   end
 
