@@ -1,4 +1,4 @@
 class Playthrough < ApplicationRecord
   belongs_to :player
-  validates :started_playing, :time_spent, :score, presence: true
+  validates :started_playing, :finished_playing, :score, presence: true
 end

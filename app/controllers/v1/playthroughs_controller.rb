@@ -43,7 +43,7 @@ module V1
     private
 
     def playthrough_params
-      params.permit(:started_playing, :time_spent, :score, :player_id)
+      params.permit(:started_playing, :finished_playing, :score, :player_id)
     end
 
     def set_playthrough

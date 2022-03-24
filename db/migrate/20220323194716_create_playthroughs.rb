@@ -3,7 +3,7 @@ class CreatePlaythroughs < ActiveRecord::Migration[7.0]
     create_table :playthroughs do |t|
       t.integer :score, null: false
       t.timestamp :started_playing, null: false
-      t.time :time_spent, null: false
+      t.timestamp :finished_playing, null: false
       t.belongs_to :player, null: false
 
       t.timestamps

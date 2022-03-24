@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_194716) do
   create_table "playthroughs", force: :cascade do |t|
     t.integer "score", null: false
     t.datetime "started_playing", precision: nil, null: false
-    t.time "time_spent", null: false
+    t.datetime "finished_playing", precision: nil, null: false
     t.bigint "player_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
