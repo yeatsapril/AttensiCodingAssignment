@@ -15,7 +15,11 @@ module V1
     end
 
     def total_time_spent
-      object.playthroughs.count
+      total_seconds = object.playthroughs.map do |time|
+        time.finished_playing - time.started_playing
+      end.inject(0, &:+)
+
+      Time.at(total_seconds).utc.strftime("%H:%M:%S")
     end
   end
 end
