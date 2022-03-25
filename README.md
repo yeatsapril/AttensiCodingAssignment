@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Coding Assignemnt: Api Leaderboard using RoR
 
-Things you may want to cover:
+## Endpoints
 
-* Ruby version
+### Player:
+http://localhost:3000/v1/players
 
-* System dependencies
+POST params:
+- name (string)
 
-* Configuration
+### Playthrough:
 
-* Database creation
+http://localhost:3000/v1/playthroughs
 
-* Database initialization
+POST params:
+- started_playing (datetime)
+- finished_playing (datetime)
+- score (integer)
+- player_id (integer)
 
-* How to run the test suite
+### Impact Report:
 
-* Services (job queues, cache servers, search engines, etc.)
+http://localhost:3000/v1/impact_reports/
 
-* Deployment instructions
+### Weekly Summary:
 
-* ...
+Top by score: http://localhost:3000/v1/weekly_summaries/score
+Top by time played: http://localhost:3000/v1/weekly_summaries/time_played
