@@ -11,9 +11,9 @@ module V1
       render json: @playthrough
     end
 
-
     def create
       @playthrough = Playthrough.new(playthrough_params)
+      @playthrough.time_spent = set_time_played
 
       if @playthrough.save
         render json: @playthrough
@@ -48,6 +48,10 @@ module V1
 
     def set_playthrough
       @playthrough = Playthrough.find(params[:id])
+    end
+
+    def set_time_played
+      TimeSpentService.calculate_time_spent!(@playthrough.finished_playing, @playthrough.started_playing)
     end
   end
 end

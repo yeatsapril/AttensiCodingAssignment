@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_23_194716) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_25_171509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_194716) do
     t.bigint "player_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "time_spent"
     t.index ["player_id"], name: "index_playthroughs_on_player_id"
   end
 
