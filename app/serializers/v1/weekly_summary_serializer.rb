@@ -7,7 +7,7 @@ module V1
     end
 
     def time_spent
-      Time.at(object.finished_playing - object.started_playing).utc.strftime("%H:%M:%S")
+      TimeSpentService.format_time_spent(object.time_spent)
     end
   end
 end
