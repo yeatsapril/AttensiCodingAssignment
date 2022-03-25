@@ -1,6 +1,6 @@
 # README
 
-Coding Assignemnt: Api Leaderboard using RoR
+Coding Assignment: Api Leaderboard using RoR
 
 ## Endpoints
 
