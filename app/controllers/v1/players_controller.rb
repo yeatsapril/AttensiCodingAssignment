@@ -1,6 +1,6 @@
 module V1
   class PlayersController < ApplicationController
-    before_action :set_player, only: [:show, :update, :destroy]
+    before_action :set_player, only: [:show, :destroy]
 
     def index
       @players = Player.all
@@ -18,15 +18,6 @@ module V1
         render json: @player
       else
         render json: { error: 'player creation failed' }, status: 400
-      end
-    end
-
-    def update
-      if @player
-        @player.update(player_params)
-        render json: @player, status: 200
-      else
-        render json: { error: 'player update failed' }, status: 400
       end
     end
 

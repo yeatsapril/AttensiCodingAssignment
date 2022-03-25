@@ -1,6 +1,6 @@
 module V1
   class PlaythroughsController < ApplicationController
-  before_action :set_playthrough, only: [:show, :update, :destroy]
+  before_action :set_playthrough, only: [:show, :destroy]
 
     def index
       @playthroughs = Playthrough.all
@@ -19,15 +19,6 @@ module V1
         render json: @playthrough
       else
         render json: { error: 'playthrough creation failed' }, status: 400
-      end
-    end
-
-    def update
-      if @playthrough
-        @playthrough.update(playthrough_params)
-        render json: @playthrough, status: 200
-      else
-        render json: { error: 'playthrough update failed' }, status: 400
       end
     end
 
