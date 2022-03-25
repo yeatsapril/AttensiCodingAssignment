@@ -27,4 +27,5 @@ http://localhost:3000/v1/impact_reports/
 ### Weekly Summary:
 
 Top by score: http://localhost:3000/v1/weekly_summaries/score
+
 Top by time played: http://localhost:3000/v1/weekly_summaries/time_played
