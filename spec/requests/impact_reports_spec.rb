@@ -10,14 +10,14 @@ RSpec.describe "v1/impact_reports" do
 
       expect(response).to be_successful
       expect(response.body).to eq([{
-        name: playthrough.player.name,
+        player: playthrough.player.name,
         first_score: playthrough.score,
         highest_score: playthrough.score,
         number_of_playthroughs: 1,
         total_time_spent: "01:00:00"
       },
       {
-        name: playthrough_2.player.name,
+        player: playthrough_2.player.name,
         first_score: playthrough_2.score,
         highest_score: playthrough_2.score,
         number_of_playthroughs: 1,

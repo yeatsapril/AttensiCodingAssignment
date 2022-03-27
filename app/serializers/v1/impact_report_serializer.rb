@@ -1,6 +1,10 @@
 module V1
   class ImpactReportSerializer < ActiveModel::Serializer
-    attributes :name, :first_score, :highest_score, :number_of_playthroughs, :total_time_spent
+    attributes :player, :first_score, :highest_score, :number_of_playthroughs, :total_time_spent
+
+    def player
+      object.name
+    end
 
     def first_score
       object.playthroughs.first.score
