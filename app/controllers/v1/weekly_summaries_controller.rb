@@ -3,13 +3,13 @@ module V1
     before_action :set_playthroughs
 
     def score
-      @playthroughs.order(score: :desc).limit(10)
-      render json: @playthroughs, each_serializer: V1::WeeklySummarySerializer
+      playthroughs = @playthroughs.order(score: :desc).limit(10)
+      render json: playthroughs, each_serializer: V1::WeeklySummarySerializer
     end
 
     def time_played
-      @playthroughs.order(time_spent: :desc).limit(10)
-      render json: @playthroughs, each_serializer: V1::WeeklySummarySerializer
+      playthroughs = @playthroughs.order(time_spent: :desc).limit(10)
+      render json: playthroughs, each_serializer: V1::WeeklySummarySerializer
     end
 
     private
